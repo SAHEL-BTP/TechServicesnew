@@ -9,7 +9,7 @@ const slides = [
     title: "Gérez vos projets BTP",
     subtitle: "avec TechServices",
     description: "L'application tout-en-un pour les professionnels du bâtiment",
-    image: "/modern-construction-site-with-workers-using-tablet.jpg",
+    image: "/hero/slide1.jpg", 
     cta: "Télécharger l'App",
     ctaLink: "/app-mobile",
     icon: Smartphone,
@@ -18,7 +18,7 @@ const slides = [
     title: "Dashboard Web Professionnel",
     subtitle: "Pilotez votre activité",
     description: "Tableau de bord complet pour gérer vos équipes et projets",
-    image: "/professional-dashboard-interface-for-construction-.jpg",
+    image: "/hero/slide2.jpg", 
     cta: "Découvrir le Dashboard",
     ctaLink: "/volet-web",
     icon: Monitor,
@@ -27,7 +27,7 @@ const slides = [
     title: "Trouvez des techniciens qualifiés",
     subtitle: "en quelques clics",
     description: "Réseau vérifié de professionnels du BTP à votre disposition",
-    image: "/construction-professionals-networking-and-collabor.jpg",
+    image: "/hero/slide3.jpg", 
     cta: "Voir les fonctionnalités",
     ctaLink: "/fonctionnalites",
     icon: Zap,
@@ -67,7 +67,7 @@ export function HeroCarousel() {
     setIsAutoPlaying(false)
   }
 
-  // Touch Events pour swipe mobile
+  // Touch Events
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.changedTouches[0].screenX
     touchEndX.current = null
@@ -81,14 +81,11 @@ export function HeroCarousel() {
     if (!touchStartX.current || !touchEndX.current) return
 
     const diff = touchStartX.current - touchEndX.current
-    const threshold = 50 // pixels min pour déclencher
+    const threshold = 50
 
     if (Math.abs(diff) > threshold) {
-      if (diff > 0) {
-        nextSlide() // swipe gauche → slide suivante
-      } else {
-        prevSlide() // swipe droite → slide précédente
-      }
+      if (diff > 0) nextSlide()
+      else prevSlide()
     }
 
     touchStartX.current = null
@@ -105,7 +102,8 @@ export function HeroCarousel() {
 
       <div className="container mx-auto px-4 py-12 md:py-20 lg:py-24 relative z-10">
         <div className="relative">
-          {/* Slides Container - Swipe activé sur mobile */}
+
+          {/* Slides Container */}
           <div
             ref={carouselRef}
             className="relative min-h-[500px] md:min-h-[550px] lg:min-h-[600px] touch-pan-y"
@@ -127,6 +125,7 @@ export function HeroCarousel() {
                   }`}
                 >
                   <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full">
+
                     {/* Content */}
                     <div className="space-y-6 lg:space-y-8">
                       <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/10 to-accent/10 text-primary px-4 py-2 rounded-full border border-primary/20 hover:scale-105 transition-transform">
@@ -143,24 +142,15 @@ export function HeroCarousel() {
                         </span>
                       </div>
 
-                      <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance max-w-xl leading-relaxed">
+                      <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-xl leading-relaxed">
                         {slide.description}
                       </p>
 
                       <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
-                        <Button
-                          size="lg"
-                          asChild
-                          className="text-base md:text-lg px-6 md:px-8 py-6 hover:scale-105 hover:shadow-xl transition-all"
-                        >
+                        <Button size="lg" asChild className="text-base md:text-lg px-6 md:px-8 py-6 hover:scale-105 hover:shadow-xl transition-all">
                           <a href={slide.ctaLink}>{slide.cta}</a>
                         </Button>
-                        <Button
-                          size="lg"
-                          variant="outline"
-                          asChild
-                          className="text-base md:text-lg px-6 md:px-8 py-6 bg-background/50 backdrop-blur-sm hover:scale-105 hover:shadow-xl transition-all"
-                        >
+                        <Button size="lg" variant="outline" asChild className="text-base md:text-lg px-6 md:px-8 py-6 bg-background/50 backdrop-blur-sm hover:scale-105 hover:shadow-xl transition-all">
                           <a href="/contact">Nous contacter</a>
                         </Button>
                       </div>
@@ -172,21 +162,22 @@ export function HeroCarousel() {
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-primary/10 group-hover:scale-105 transition-all duration-500">
                           <img
-                            src={slide.image || "/placeholder.svg?height=600&width=800"}
+                            src={slide.image}
                             alt={slide.title}
-                            className="w-full h-[500px] lg:h-[550px] object-cover"
+                            className="w-full h-[500px] lg:h-[600px] object-cover"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
                         </div>
                       </div>
                     </div>
+
                   </div>
                 </div>
               )
             })}
           </div>
 
-          {/* Navigation Arrows - Cachés sur mobile */}
+          {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
             className="hidden md:block absolute left-0 lg:-left-4 top-1/2 -translate-y-1/2 bg-background/90 backdrop-blur-sm hover:bg-background border border-border rounded-full p-3 lg:p-4 transition-all hover:scale-110 shadow-lg z-20"
@@ -203,7 +194,7 @@ export function HeroCarousel() {
             <ChevronRight className="h-5 w-5 lg:h-6 lg:w-6" />
           </button>
 
-          {/* Dots Indicator */}
+          {/* Dots */}
           <div className="absolute -bottom-2 lg:-bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             {slides.map((_, index) => (
               <button
@@ -216,6 +207,7 @@ export function HeroCarousel() {
               />
             ))}
           </div>
+
         </div>
       </div>
     </section>
