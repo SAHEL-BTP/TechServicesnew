@@ -36,7 +36,7 @@ export default function VoletWebPage() {
           <div className="max-w-6xl mx-auto">
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 md:p-12">
               <img
-                src="/professional-construction-management-dashboard-int.jpg"
+                src="/hero/page.jpg"
                 alt="Dashboard TechServices"
                 className="rounded-2xl shadow-2xl w-full"
               />

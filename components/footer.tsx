@@ -20,12 +20,12 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/share/17Tp6HajCT/"
                 className="w-9 h-9 rounded-lg bg-background/10 hover:bg-primary flex items-center justify-center transition-colors"
               >
                 <Facebook className="w-4 h-4" />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="w-9 h-9 rounded-lg bg-background/10 hover:bg-primary flex items-center justify-center transition-colors"
               >
@@ -42,7 +42,7 @@ export function Footer() {
                 className="w-9 h-9 rounded-lg bg-background/10 hover:bg-primary flex items-center justify-center transition-colors"
               >
                 <Instagram className="w-4 h-4" />
-              </a>
+              </a> */}
             </div>
           </div>
 
