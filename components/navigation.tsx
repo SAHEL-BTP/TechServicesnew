@@ -72,7 +72,7 @@ export function Navigation() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="outline" size="sm" asChild>
-              <Link href="/app-mobile">
+              <Link href="https://expo.dev/artifacts/eas/8dZNupYiLcyhKkXEqeSrCW.apk">
                 <Smartphone className="w-4 h-4 mr-2" />
                 Télécharger l'App
               </Link>
@@ -115,7 +115,7 @@ export function Navigation() {
               ))}
               <div className="flex flex-col gap-2 px-4 pt-4 border-t border-border">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/app-mobile">
+                  <Link href="https://expo.dev/artifacts/eas/8dZNupYiLcyhKkXEqeSrCW.apk">
                     <Smartphone className="w-4 h-4 mr-2" />
                     Télécharger l'App
                   </Link>

@@ -203,9 +203,9 @@ export default function AppMobilePage() {
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8">
               {/* Logo TechServices */}
               <img 
-                src="/logo-techservices.png" 
-                alt="TechServices Logo" 
-                className="h-12 w-auto mx-auto mb-4" 
+                src="/logoTS.png" 
+                alt="" 
+                className="h-24 w-auto mx-auto mb-4" 
               />
 
               <h2 className="text-3xl font-bold mb-4">Téléchargez l'application maintenant</h2>

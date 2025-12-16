@@ -1,7 +1,7 @@
 // import { Check, Smartphone, Monitor, Zap } from "lucide-react"
 // import { Button } from "@/components/ui/button"
 
-// export default function TarifsPage() {
+export default function TarifsPage() {
 //   const plans = [
 //     {
 //       name: "Gratuit",
@@ -54,7 +54,7 @@
 //       popular: false,
 //     },
 //   ]
-
+return null
 //   return (
 //     <div className="min-h-screen pt-20">
 //       {/* Hero Section */}
@@ -196,4 +196,4 @@
 //       </section>
 //     </div>
 //   )
-// }
+}
